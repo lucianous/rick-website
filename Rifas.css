@@ -1,0 +1,234 @@
+.u-section-1 {
+  background-image: none;
+  min-height: 100vh;
+}
+
+.u-section-1 .u-image-1 {
+  height: 562px;
+  filter: brightness(0.55);
+  margin: 0 auto 0 0;
+}
+
+.u-section-1 .u-list-1 {
+  min-height: 272px;
+  grid-template-columns: calc(50% - 11px) calc(50% - 11px);
+  grid-template-rows: auto;
+  width: 698px;
+  grid-gap: 22px 22px;
+  margin: -173px auto 0;
+}
+
+.u-section-1 .u-list-item-1 {
+  background-image: none;
+  animation-duration: 1000ms;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 30px 20px;
+}
+
+.u-section-1 .u-text-1 {
+  font-weight: 700;
+  text-shadow: 0 0 40px rgba(219,84,90,1);
+  margin: 25px 1px 0;
+}
+
+.u-section-1 .u-text-2 {
+  font-style: italic;
+  margin: 29px 1px 0;
+}
+
+.u-section-1 .u-btn-1 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-style: none;
+  background-image: none;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  margin: 11px auto 0;
+  padding: 10px 32px 10px 31px;
+}
+
+.u-section-1 .u-list-item-2 {
+  background-image: none;
+  animation-duration: 1000ms;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 30px 20px;
+}
+
+.u-section-1 .u-text-3 {
+  font-weight: 700;
+  text-shadow: 0 0 40px rgba(219,84,90,1);
+  margin: 25px 1px 0;
+}
+
+.u-section-1 .u-text-4 {
+  font-style: italic;
+  margin: 29px 1px 0;
+}
+
+.u-section-1 .u-btn-2 {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-style: none;
+  background-image: none;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  margin: 11px auto 0;
+  padding: 10px 32px 10px 31px;
+}
+
+.u-section-1 .u-text-5 {
+  font-weight: 700;
+  width: 434px;
+  margin: -459px auto 0;
+}
+
+.u-section-1 .u-text-6 {
+  width: 434px;
+  margin: 14px auto 0;
+}
+
+.u-section-1 .u-text-7 {
+  margin: 244px calc(((100% - 1140px) / 2)) 60px calc(((100% - 1140px) / 2) + 923px);
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-image-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-list-1 {
+    min-height: 167px;
+    grid-template-columns: repeat(2, calc(50% - 11px));
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-btn-1 {
+    padding-right: 66px;
+    padding-left: 64px;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-btn-2 {
+    padding-right: 66px;
+    padding-left: 64px;
+  }
+
+  .u-section-1 .u-text-6 {
+    margin-top: 11px;
+  }
+
+  .u-section-1 .u-text-7 {
+    width: 434px;
+    margin-top: 439px;
+    margin-left: calc(((100% - 940px) / 2) + 723px);
+    margin-right: calc(((100% - 940px) / 2));
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-list-1 {
+    grid-template-columns: repeat(2, calc(((100% - 720px) / 2)  + 349px));
+  }
+
+  .u-section-1 .u-text-7 {
+    margin-left: calc(((100% - 720px) / 2) + 503px);
+    margin-right: calc(((100% - 720px) / 2));
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-list-1 {
+    grid-template-columns: repeat(1, calc(100% - 0));
+    width: 540px;
+    height: auto;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-section-1 .u-text-3 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-text-4 {
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-text-5 {
+    margin-top: -372px;
+  }
+
+  .u-section-1 .u-text-6 {
+    margin-top: -120px;
+  }
+
+  .u-section-1 .u-text-7 {
+    margin: 244px calc(((100% - 540px) / 2)) 0 calc(((100% - 540px) / 2) + 323px);
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-image-1 {
+    height: 489px;
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-list-1 {
+    grid-template-columns: 100%;
+    width: 340px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .u-section-1 .u-text-5 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-text-6 {
+    margin-top: -112px;
+    width: 340px;
+  }
+
+  .u-section-1 .u-text-7 {
+    width: 340px;
+    margin-left: calc(((100% - 340px) / 2) + 123px);
+    margin-right: calc(((100% - 340px) / 2));
+  }
+}
