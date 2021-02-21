@@ -31581,23 +31581,19 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-nav-4 {
   box-shadow: 2px 2px 8px 0 rgba(128,128,128,1);
 }
-@media (max-width: 1199px) {
-  .u-header .u-image-1 {
-    width: 64px;
-    height: 32px;
-  }
 
+@media (max-width: 991px) {
   .u-header .u-menu-1 {
     width: auto;
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 575px) {
   .u-header .u-image-1 {
     width: auto;
+    height: 32px;
   }
 }
-
 .u-footer {
   background-image: none;
 }
