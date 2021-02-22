@@ -234,3 +234,7 @@
     width: 340px;
   }
 }
+
+#time_counter {
+  size: 30px;
+}
