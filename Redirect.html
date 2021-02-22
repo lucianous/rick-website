@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="page_type" content="np-template-header-footer-from-plugin">
+        <title>Rifa redirect</title>
+        
+        <script>
+            if(localStorage.getItem("buy1Pressed") == String("true")) {
+                document.getElementById("headerRedirect").text("Pagamento recebido")}
+            else {
+                document.getElementById("headerRedirect").text("buy1Pressed nao esta true")}
+            function hasTransid() {
+                document.getElementById("headerCheckPayment").text("got the Parameter in url, Java function called, php called the function correctly.")
+            }
+        </script>
+        <?php
+            if(isset($_GET['transid'])) {
+                var $transid = $_GET['transid'];
+                echo $transid;
+                echo "<script> window.onload = hasTransid() </script>"
+                echo "Line above (24) was window.onload = hasTransid(), below will be hasTransid()"
+                echo "<script> hasTransid() </script>"
+                echo "Above was only the function being called."
+            }
+        ?>
+    
+    </head>
+    <body>
+        <h1 id="headerRedirect">Ola 12345</h1>
+        <h2 id="headerCheckPayment">Second header</h2>
+    </body>
+</html>
