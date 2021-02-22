@@ -236,5 +236,6 @@
 }
 
 #time_counter {
-  font-size: large;
+  font-size: 5rem;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
