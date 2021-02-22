@@ -1,5 +1,5 @@
 .u-section-1 .u-sheet-1 {
-  min-height: 622px;
+  min-height: 805px;
 }
 
 .u-section-1 .u-layout-wrap-1 {
@@ -62,12 +62,12 @@
 .u-section-1 .u-text-1 {
   font-size: 2.25rem;
   font-weight: normal;
-  margin: 40px auto 0 20px;
+  margin: 40px 300px 0 20px;
 }
 
 .u-section-1 .u-text-2 {
   font-size: 1.5rem;
-  margin: 30px auto 30px 30px;
+  margin: 30px 385px 30px 30px;
 }
 
 .u-section-1 .u-text-3 {
@@ -79,7 +79,7 @@
 }
 
 .u-section-1 .u-btn-1 {
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   border-style: none;
   font-weight: 700;
   text-transform: uppercase;
@@ -87,16 +87,12 @@
   background-image: none;
   box-shadow: 0 0 40px 0 rgba(173,246,242,1);
   margin: 20px auto 0 20px;
-  padding: 9px 77px 11px;
-}
-
-.u-section-1 .u-icon-1 {
-  font-size: 2em;
+  padding: 21px 14px 22px 13px;
 }
 
 @media (max-width: 1199px) {
   .u-section-1 .u-sheet-1 {
-    min-height: 534px;
+    min-height: 685px;
   }
 
   .u-section-1 .u-layout-cell-1 {
@@ -108,11 +104,13 @@
   }
 
   .u-section-1 .u-text-1 {
+    margin-right: 220px;
     margin-left: 16px;
   }
 
   .u-section-1 .u-text-2 {
     margin-left: 24px;
+    margin-right: 315px;
   }
 
   .u-section-1 .u-text-3 {
@@ -126,6 +124,10 @@
 }
 
 @media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 220px;
+  }
+
   .u-section-1 .u-layout-cell-1 {
     min-height: 100px;
   }
@@ -135,15 +137,21 @@
   }
 
   .u-section-1 .u-text-1 {
+    margin-right: 110px;
     margin-left: 12px;
   }
 
   .u-section-1 .u-text-2 {
     margin-left: 18px;
+    margin-right: 205px;
   }
 }
 
 @media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 320px;
+  }
+
   .u-section-1 .u-container-layout-1 {
     padding-left: 10px;
     padding-right: 10px;
@@ -164,16 +172,14 @@
 }
 
 @media (max-width: 575px) {
-  .u-section-1 .u-sheet-1 {
-    min-height: 420px;
-  }
-
   .u-section-1 .u-text-1 {
+    margin-right: 0;
     margin-left: 13px;
   }
 
   .u-section-1 .u-text-2 {
     margin-left: 19px;
+    margin-right: 5px;
   }
 }.u-section-2 .u-sheet-1 {
   min-height: 384px;
@@ -188,7 +194,6 @@
   min-height: 245px;
   grid-template-columns: calc(25% - 3.75px) calc(25% - 3.75px) calc(25% - 3.75px) calc(25% - 3.75px);
   grid-template-rows: auto;
-  height: auto;
   grid-gap: 5px 5px;
   margin: 10px auto 60px 0;
 }
@@ -274,6 +279,7 @@
   .u-section-2 .u-list-1 {
     min-height: 202px;
     grid-template-columns: repeat(4, calc(25% - 3.75px));
+    height: auto;
     margin-right: initial;
     margin-left: initial;
   }
