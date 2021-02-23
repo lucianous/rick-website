@@ -150,11 +150,22 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
               </div>
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
+                  <?php
+                    $email = 'rickclaudio2@gmail.com';
+                    $token = 'F6E9AB21A38A4F179D2756998C8B3E95';
+                    //Sandbox
+                    $url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/checkout' . '?email=' . $email . '&token=' . $token;
+                    //Original
+                    //$url = 'https://ws.pagseguro.uol.com.br/v2/checkout' . '?email=' . $email . '&token=' . $token;
+
+
+                  ?>
                   <h1 class="u-text u-title u-text-1">Moto 400cv</h1>
                   <p class="u-text u-text-2">R$ 10.00</p>
                   <p class="u-custom-font u-heading-font u-text u-text-3">Moto com pouco uso por apenas 10 reais e um pingo de sorte, fácil demais não acha?<br>- 400cv de potencia<br>- 15L de capacidade gasosica<br>- faz vrum vrum<br>- semi-automatica<br>
                   </p>
-                  <a href="https://pag.ae/7WUM5oVb6/button" onclick="buyPressed()" id="buy-button" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-10 u-text-body-alt-color u-btn-1">comprar pelo pagseguro</a>
+                  <a href="<?php $url ?>" onclick="buyPressed()" id="buy-button" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-10 u-text-body-alt-color u-btn-1">comprar pelo pagseguro</a>
+                  <!-- <a href="https://pag.ae/7WUM5oVb6/button" onclick="buyPressed()" id="buy-button" class="u-btn u-btn-round u-button-style u-hover-palette-3-light-1 u-palette-3-base u-radius-10 u-text-body-alt-color u-btn-1">comprar pelo pagseguro</a> !-->
                 </div>
               </div>
             </div>
