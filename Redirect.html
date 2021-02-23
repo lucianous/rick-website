@@ -7,35 +7,48 @@
         <meta name="description" content="">
         <meta name="page_type" content="np-template-header-footer-from-plugin">
         <title>Rifa redirect</title>
-        
-        <script>
-            if(localStorage.getItem("buy1Pressed") == String("true")) {
-                document.getElementById("headerRedirect").text("Pagamento recebido")}
-            else {
-                document.getElementById("headerRedirect").text("buy1Pressed nao esta true")}
-            function hasTransid() {
-                document.getElementById("headerCheckPayment").text("got the Parameter in url, Java function called, php called the function correctly.")
-            }
-            function dontTransid() {
-                document.getElementById("headerRedirect").text() = "ok"
-            }
-        </script>
-        <?php
-            if(isset($_GET['transid'])) {
-                var $transid = $_GET['transid'];
-                echo $transid;
-                echo "<script> window.onload = hasTransid() </script>"
-                echo "Line above (24) was window.onload = hasTransid(), below will be hasTransid()"
-                echo "<script> hasTransid() </script>"
-                echo "Above was only the function being called."
-            } else {
-                echo "<script>dontTransid()</script>"
-            }
-        ?>
-    
     </head>
     <body>
         <h1 id="headerRedirect">Ola 12345</h1>
-        <h2 id="headerCheckPayment">Second header</h2>
+        
+        <?php
+            $name = 'paglog.txt';
+            $text = var_export($_POST, true);
+            $file = fopen($name, 'a');
+            fwrite($file, $text);
+            fclose($file);
+
+            if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
+                //Todo resto do código iremos inserir aqui.
+
+                $email = 'rickclaudio2@gmail.com';
+                $token = 'F6E9AB21A38A4F179D2756998C8B3E95';
+
+                //Sandbox
+                $url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
+                //Original
+                //$url = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
+
+
+                $curl = curl_init($url);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);      //Configura o Curl Biblioteca
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);       //Configura o Curl Biblioteca
+                $transaction= curl_exec($curl);                         //Seta o exec do Curl
+                curl_close($curl);                                      //Ja retornou o XML
+
+                if($transaction == 'Unauthorized'){
+                    //Insira seu código avisando que o sistema está com problemas, sugiro enviar um e-mail avisando para alguém fazer a manutenção 
+                    echo "problema com o Token";
+                exit; //Mantenha essa linha
+                }
+
+                $transaction = simplexml_load_string($transaction); //Transforma o XML em objeto para ser manipulado
+
+                //Pegar um objeto respeitando a hierarquia XML
+                $transaction -> status;
+            }
+            
+        ?>
+
     </body>
 </html>
