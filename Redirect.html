@@ -16,6 +16,9 @@
             function hasTransid() {
                 document.getElementById("headerCheckPayment").text("got the Parameter in url, Java function called, php called the function correctly.")
             }
+            function dontTransid() {
+                document.getElementById("headerRedirect").text() = "ok"
+            }
         </script>
         <?php
             if(isset($_GET['transid'])) {
@@ -25,6 +28,8 @@
                 echo "Line above (24) was window.onload = hasTransid(), below will be hasTransid()"
                 echo "<script> hasTransid() </script>"
                 echo "Above was only the function being called."
+            } else {
+                echo "<script>dontTransid()</script>"
             }
         ?>
     
