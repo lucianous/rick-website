@@ -1,54 +1,8 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="utf-8">
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <meta name="page_type" content="np-template-header-footer-from-plugin">
-        <title>Rifa redirect</title>
-    </head>
-    <body>
-        <h1 id="headerRedirect">Ola 12345</h1>
-        
-        <?php
-            $name = 'paglog.txt';
-            $text = var_export($_POST, true);
-            $file = fopen($name, 'a');
-            fwrite($file, $text);
-            fclose($file);
 
-            if(isset($_POST['notificationType']) && $_POST['notificationType'] == 'transaction'){
-                //Todo resto do código iremos inserir aqui.
-
-                $email = 'rickclaudio2@gmail.com';
-                $token = 'F6E9AB21A38A4F179D2756998C8B3E95';
-
-                //Sandbox
-                $url = 'https://ws.sandbox.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
-                //Original
-                //$url = 'https://ws.pagseguro.uol.com.br/v2/transactions/notifications/' . $_POST['notificationCode'] . '?email=' . $email . '&token=' . $token;
-
-
-                $curl = curl_init($url);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);      //Configura o Curl Biblioteca
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);       //Configura o Curl Biblioteca
-                $transaction= curl_exec($curl);                         //Seta o exec do Curl
-                curl_close($curl);                                      //Ja retornou o XML
-
-                if($transaction == 'Unauthorized'){
-                    //Insira seu código avisando que o sistema está com problemas, sugiro enviar um e-mail avisando para alguém fazer a manutenção 
-                    echo "problema com o Token";
-                exit; //Mantenha essa linha
-                }
-
-                $transaction = simplexml_load_string($transaction); //Transforma o XML em objeto para ser manipulado
-
-                //Pegar um objeto respeitando a hierarquia XML
-                $transaction -> status;
-            }
-            
-        ?>
-
-    </body>
-</html>
+<head>
+    <title>Redirect.html</title>
+</head>
+<body>
+    <h1>Off</h1>
+</body>
