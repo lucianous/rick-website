@@ -16,9 +16,32 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|heading-font">
     
-    <!-- Mercado Pago SDK Front-end and Back-end-->
+    <!-- Mercado Pago SDK Front-end -->
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <script> window.Mercadopago.setPublishableKey("YOUR_PUBLIC_KEY"); </script>
+    <!-- Back-end Mercado Pago SDK -->
+    <?php
+    require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
+
+    MercadoPago\SDK::setAccessToken("YOUR_ACCESS_TOKEN"); // Either Production or SandBox AccessToken
+
+    $payment = new MercadoPago\Payment();
     
+    $payment->transaction_amount = 141;
+    $payment->token = "YOUR_CARD_TOKEN";
+    $payment->description = "Ergonomic Silk Shirt";
+    $payment->installments = 1;
+    $payment->payment_method_id = "visa";
+    $payment->payer = array(
+      "email" => "larue.nienow@email.com"
+    );
+
+    $payment->save();
+
+    echo $payment->status;
+  ?>
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PE9HQS9Y30"></script>
     <script>
