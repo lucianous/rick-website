@@ -19,7 +19,7 @@
     <!-- Mercado Pago SDK Front-end -->
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
     <script> window.Mercadopago.setPublishableKey("YOUR_PUBLIC_KEY"); </script>
-    <!-- Back-end Mercado Pago SDK -->
+    <!-- Back-end Mercado Pago SDK, creio que como se utiliza a SDK de forma simples, talvez um request -->
     <?php
     require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
 
@@ -40,9 +40,40 @@
 
     echo $payment->status;
   ?>
+  <!-- Codigo para criar os parametros de Produto. -->
+  <?php
+  // SDK de Mercado Pago
+  require __DIR__ .  '/vendor/autoload.php';
+  
+  // Configura credenciais
+  MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN');
+  
+  // Cria um objeto de preferência
+  $preference = new MercadoPago\Preference();
+  
+  // Cria um item na preferência
+  $item = new MercadoPago\Item();
+  $item->title = 'Rifa Moto';
+  $item->quantity = 1;
+  $item->unit_price = 10.00;
+  $preference->items = array($item);
+  $preference->save();
+  ?>
+  <!-- Script para criar um button ou o link dele com o ID do pagamento?, ou simplesmente um botão etc.--> 
+  <script
+  src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
+  data-preference-id="<?php echo $preference->id; ?>">
+  </script>
 
+  <!-- Criar usuario de teste, da um retorrno em POST parece.
+  curl -X POST \
+  -H "Content-Type: application/json" \
+  -H 'Authorization: Bearer PROD_ACCESS_TOKEN' \
+  "https://api.mercadopago.com/users/test_user" \
+  -d '{"site_id":"MLB"}'
+  -->
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics --> 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PE9HQS9Y30"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
