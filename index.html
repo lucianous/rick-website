@@ -18,16 +18,16 @@
     
     <!-- Mercado Pago SDK Front-end -->
     <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
-    <script> window.Mercadopago.setPublishableKey("YOUR_PUBLIC_KEY"); </script>
-    <!-- Back-end Mercado Pago SDK, creio que como se utiliza a SDK de forma simples, talvez um request -->
+    <script> window.Mercadopago.setPublishableKey("TEST-76cfe54e-e62a-4dc4-b113-df1183eff5a7"); </script>
+    <!-- Back-end Mercado Pago SDK, creio que como se utiliza a SDK de forma simples, talvez um request
     <?php
     require_once 'vendor/autoload.php'; // You have to require the library from your Composer vendor folder
 
-    MercadoPago\SDK::setAccessToken("YOUR_ACCESS_TOKEN"); // Either Production or SandBox AccessToken
+    MercadoPago\SDK::setAccessToken("TEST-8816924372375822-022702-6cf725adb1b56ac044e8b6e3f603f63c-536591493"); // Either Production or SandBox AccessToken
 
     $payment = new MercadoPago\Payment();
     
-    $payment->transaction_amount = 141;
+    $payment->transaction_amount = 10;
     $payment->token = "YOUR_CARD_TOKEN";
     $payment->description = "Ergonomic Silk Shirt";
     $payment->installments = 1;
@@ -40,13 +40,15 @@
 
     echo $payment->status;
   ?>
+   -->
+
   <!-- Codigo para criar os parametros de Produto. -->
   <?php
   // SDK de Mercado Pago
   require __DIR__ .  '/vendor/autoload.php';
   
   // Configura credenciais
-  MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN');
+  MercadoPago\SDK::setAccessToken('TEST-8816924372375822-022702-6cf725adb1b56ac044e8b6e3f603f63c-536591493');
   
   // Cria um objeto de preferência
   $preference = new MercadoPago\Preference();
@@ -59,13 +61,14 @@
   $preference->items = array($item);
   $preference->save();
   ?>
-  <!-- Script para criar um button ou o link dele com o ID do pagamento?, ou simplesmente um botão etc.--> 
+
+  <!-- Script para criar um button ou o link dele com o ID do pagamento?, ou simplesmente um botão etc.
   <script
   src="https://www.mercadopago.com.br/integrations/v1/web-payment-checkout.js"
   data-preference-id="<?php echo $preference->id; ?>">
-  </script>
+  </script> --> 
 
-  <!-- Criar usuario de teste, da um retorrno em POST parece.
+  <!-- Criar usuario de teste, da um retorno em POST parece.
   curl -X POST \
   -H "Content-Type: application/json" \
   -H 'Authorization: Bearer PROD_ACCESS_TOKEN' \
